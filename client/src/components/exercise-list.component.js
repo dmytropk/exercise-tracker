@@ -27,7 +27,7 @@ export default class ExercisesList extends Component {
 
   //get the list of exercises from the database
   componentDidMount() {
-    axios.get('http://localhost:5000/exercises/')
+    axios.get('https://mern-exe-tracker.herokuapp.com/exercises/')
      .then(response => {
        this.setState({ exercises: response.data });
      })
@@ -38,7 +38,7 @@ export default class ExercisesList extends Component {
 
   //allow users to delete exercises
   deleteExercise(id) {
-    axios.delete('http://localhost:5000/exercises/'+id)
+    axios.delete('https://mern-exe-tracker.herokuapp.com/exercises/'+id)
       .then(res => console.log(res.data));
 
     this.setState({
